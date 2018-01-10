@@ -1,0 +1,9 @@
+html {
+    font-size: 50%;
+}
+
+@media screen and (min-width: 425px) {
+    html {
+        font-size: 62.5%;
+    }
+}
