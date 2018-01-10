@@ -1,0 +1,35 @@
+.navMain {
+    background: $bg-nav-main;
+    height: 100%;
+    width: 25rem;
+    @include fixed(left);
+    left: -25rem;
+    transition: left 0.5s linear;
+    &.active {
+        left: 0;
+        & > button > i {
+            transform: rotate(180deg);
+            transition: transform 0.5s linear;
+        }
+    }
+    &--btn {
+        background: $bg-nav-main;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 8rem;
+        right: -3rem;
+        text-align: right;
+        font-size: 3rem;
+        border: 0;
+        & > i {
+            transition: transform 0.5s linear;
+        }
+    }
+    &--logo {
+        background: $bg-nav-main;
+        max-width: 100%;
+        height: 25rem;
+    }
+}

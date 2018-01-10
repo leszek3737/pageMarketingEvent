@@ -1,1 +1,30 @@
-
+@mixin fixed($position) {
+    @if $position=="left" {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $zindex-fixed;
+    }
+    @else if $position=="right" {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: $zindex-fixed;
+    }
+    @else if $position=="top" {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $zindex-fixed;
+    }
+    @else if $position=="bottom" {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: $zindex-fixed;
+    }
+}

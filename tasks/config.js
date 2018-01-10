@@ -5,7 +5,7 @@ module.exports = {
         js: './src/**/*.js',
         html: './src/**/*.html',
         fonts: './src/fonts/**/*',
-        fontsLib: './../psdToHtml/dpsn-page/node_modules/bootstrap-sass/assets/fonts/bootstrap/**/*',
+        fontsLib: './node_modules/bootstrap-sass/assets/fonts/bootstrap/**/*',
         img: './src/img/**/*',
     },
     entryPoint: {
@@ -23,8 +23,10 @@ module.exports = {
     concatOrder: {
         js: './src/**/*.js',
         jsLib: [
-            "node_modules/jquery/dist/jquery.min.js",
-            "node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js",
+            "./node_modules/jquery/dist/jquery.min.js",
+            "./node_modules/jquery.browser/dist/jquery.browser.min.js",
+            "./node_modules/popper.js/dist/umd/popper.min.js",
+            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
         ]
     },
     name: {
