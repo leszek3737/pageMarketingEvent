@@ -1,0 +1,19 @@
+.tabs {
+    &__items {
+        list-style-type: none;
+    }
+    &--link {
+        text-decoration: none;
+        color: #333;
+        &.active {
+            background: #EC185D;
+            color: #fff;
+        }
+    }
+    &__content {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}

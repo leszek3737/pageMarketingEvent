@@ -1,0 +1,10 @@
+.content {
+    margin-left: 0;
+    transition: margin-left 0.5s linear;
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        margin-left: 25rem;
+    }
+}

@@ -21,4 +21,20 @@ $(document).ready(function () {
         }
         event.stopPropagation();
     })
+    $(() => {
+        $('.tabs__items').each(() => {
+            const link = $(this).find('.tabs--link');
+            link.on(on, function (e) {
+                const href = $(this).attr('href');
+                const $target = $(href);
+                if ($(href).length) {
+                    e.preventDefault();
+                    $(this).siblings('.tabs--link').removeClass('active');
+                    $(this).addClass('active');
+                    $(href).siblings('.tabs__content').removeClass('active');
+                    $(href).addClass('active');
+                }
+            });
+        });
+    });
 });
