@@ -1,6 +1,7 @@
 .btn {
     &__mainNav {
-        @include c-btn(0, "out", $red);
+        @include c-btn("lg", 0);
+        border-radius: 10rem;
     }
     &--myWWW {
         @include c-badge($primary);
