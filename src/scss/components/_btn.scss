@@ -1,0 +1,8 @@
+.btn {
+    &__mainNav {
+        @include c-btn(0, "out", $red);
+    }
+    &--myWWW {
+        @include c-badge($primary);
+    }
+}

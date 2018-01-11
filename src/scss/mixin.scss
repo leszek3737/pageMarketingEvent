@@ -28,3 +28,85 @@
         z-index: $zindex-fixed;
     }
 }
+
+@mixin c-btn-type($type, $color) {
+    @if $type==0 {
+        @include button-variant($color, $color)
+    }
+    @else if $type=="out" {
+        @if $color=="light" {
+            @include button-outline-variant($color, $gray-900);
+        }
+        @else {
+            @include button-outline-variant($color, $white);
+        }
+    }
+}
+
+@mixin c-btn-size($size) {
+    @if $size==0 {
+        @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+    }
+    @else if $size=="sm" {
+        @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+    }
+    @else if $size=="lg" {
+        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+    }
+}
+
+@mixin c-btn($size: 0, $type: 0, $color: $light) {
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: $btn-border-width solid transparent;
+    @include c-btn-size($size);
+
+    @include c-btn-type($type, $color);
+    @include transition($btn-transition);
+    @include hover-focus {
+        text-decoration: none;
+    }
+    &.focus {
+        outline: 0;
+        box-shadow: $btn-focus-box-shadow;
+    }
+    &.disabled,
+    &:disabled {
+        opacity: $btn-disabled-opacity;
+        @include box-shadow(none);
+    }
+    &:not([disabled]):not(.disabled) {
+        cursor: pointer;
+    }
+    &:not([disabled]):not(.disabled):active,
+    &:not([disabled]):not(.disabled).active {
+        background-image: none;
+        @include box-shadow($btn-active-box-shadow);
+
+        &:focus {
+            @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+        }
+    }
+}
+
+@mixin c-badge($color: 0) {
+    display: inline-block;
+    padding: $badge-padding-y $badge-padding-x;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    @include border-radius($badge-border-radius);
+    @if $color !=0 {
+        @include badge-variant($color); // Empty badges collapse automatically
+    }
+    &:empty {
+        display: none;
+    }
+}
