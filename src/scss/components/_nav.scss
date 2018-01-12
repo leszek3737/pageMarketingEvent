@@ -66,6 +66,12 @@
     transition: margin-left 0.5s linear;
 }
 
+@media screen and (min-width: 768px) {
+    .navBar {
+        @include c-flex("row-r")
+    }
+}
+
 @media screen and (min-width: 992px) {
     .navMain {
         left: 0;
