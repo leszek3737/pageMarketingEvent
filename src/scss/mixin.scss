@@ -218,7 +218,6 @@
             border-radius: ($size * 0.3);
             height: ($size * 1.6);
             width: ($size * 1.8);
-
             text-align: center;
         }
         @include fa-base("Brands");
@@ -231,6 +230,7 @@
         }
         @else if $type=="insta" {
             &:before {
+                padding-right: 0.65rem;
                 content: "\f16d";
                 color: $white;
                 background: #f09433;
