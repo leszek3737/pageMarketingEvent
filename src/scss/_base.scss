@@ -13,3 +13,7 @@ html {
         font-size: 62.5%;
     }
 }
+
+.icon-insta {
+    @include social-icons("insta");
+}

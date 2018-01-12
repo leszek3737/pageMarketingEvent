@@ -195,3 +195,59 @@
 
 
 }
+
+@mixin fa-base($type) {
+    font-family: Font Awesome\ 5 #{$type};
+    &:before {
+        content: "\f16d";
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+    }
+}
+
+@mixin social-icons($type: 0, $size: 2rem) {
+    @if $type !=0 {
+        font-size: $size;
+        &:before {
+            padding: ($size * 0.3);
+            border-radius: ($size * 0.3);
+            height: ($size * 1.6);
+            width: ($size * 1.8);
+
+            text-align: center;
+        }
+        @include fa-base("Brands");
+        @if $type=="fb" {
+            &:before {
+                color: white;
+                content: "\f082";
+                background: #3b5998;
+            }
+        }
+        @else if $type=="insta" {
+            &:before {
+                content: "\f16d";
+                color: $white;
+                background: #f09433;
+                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+
+            }
+        }
+        @else if $type=="yt" {
+            &:before {
+                color: $white;
+                content: "\f167";
+                background: #cc181e;
+            }
+        }
+    }
+
+}

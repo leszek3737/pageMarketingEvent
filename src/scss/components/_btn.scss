@@ -6,4 +6,19 @@
     &--myWWW {
         @include c-badge($primary);
     }
+    &__social {
+        & * {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        &--fb {
+            @include social-icons("fb")
+        }
+        &--insta {
+            @include social-icons("insta")
+        }
+        &--yt {
+            @include social-icons("yt")
+        }
+    }
 }
