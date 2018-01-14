@@ -21,4 +21,8 @@
             @include social-icons("yt")
         }
     }
+    &--navBar {
+        @include c-btn(0, "border", $black);
+        padding: 0.5rem;
+    }
 }

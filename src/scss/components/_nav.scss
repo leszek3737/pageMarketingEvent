@@ -64,11 +64,18 @@
     height: 5rem;
     margin-left: 0;
     transition: margin-left 0.5s linear;
+
+}
+
+.navBar__nav {
+    z-index: 10;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) {
     .navBar {
-        @include c-flex("row-r")
+        @include c-flex("row-r");
+
     }
 }
 
