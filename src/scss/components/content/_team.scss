@@ -1,0 +1,49 @@
+//<div class="about__item" >
+//<div class="d-flex align-items-center pb-3" > 
+//<img src="./img/team1.jpg" alt="" >
+//</div > <div class="team__content" > 
+//<h5 class="team--name" > Michael Joe</h5 > 
+//<p class="team--position" > CEO Founder</p >
+//<p class="team--text" > 
+.team {
+    @include c-flex("column", "wrap", "around", "end");
+    height: calc(100% - 4.2rem);
+    &__item {
+        @include c-flex("row", 0, "between");
+        height: 16rem;
+        background: $gray-200;
+        border-top-left-radius: 8rem;
+        border-bottom-left-radius: 8rem;
+        max-width: 60rem;
+    }
+    &--img {
+        width: 16rem;
+        height: 100%;
+        border-radius: 50%;
+    }
+    &__content {
+        margin-left: 0.3rem;
+    }
+    &--name {
+        margin: 0;
+    }
+    &--text {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .team {
+        @include c-flex("column", "wrap", "around", "end");
+        height: calc(100% - 4.2rem);
+        &__item {
+            &:nth-child(even) {
+                @include c-flex("row-r", 0, "between");
+                align-self: flex-start;
+                border-radius: 0;
+                border-top-right-radius: 8rem;
+                border-bottom-right-radius: 8rem;
+            }
+        }
+    }
+}

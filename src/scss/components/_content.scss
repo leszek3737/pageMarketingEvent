@@ -1,6 +1,9 @@
 .content {
-    padding: 2rem;
-    padding-left: 4.0rem;
+    padding: {
+        top: 2rem;
+        bottom: 2rem;
+        left: 4.0rem;
+    }
     margin-left: 0;
     width: 100%;
     height: calc(100% - 5rem);
@@ -13,6 +16,9 @@
     .content {
         width: calc(100% - 25rem);
         margin-left: 25rem;
-        padding-left: 2rem;
+        padding-left: 0;
+
     }
 }
+
+@import "content/team";

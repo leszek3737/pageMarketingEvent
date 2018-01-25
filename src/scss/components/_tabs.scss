@@ -3,9 +3,13 @@
         list-style-type: none;
     }
     &__content {
+        height: 100%;
         display: none;
         &.active {
             display: block;
         }
+    }
+    &__container {
+        height: 100%;
     }
 }
